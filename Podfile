@@ -5,6 +5,15 @@ target 'TranslateMaster' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for TranslateMaster
-
+	pod 'GoogleAPIClientForREST/Gmail', '~> 1.2.1'
+	pod 'Google/SignIn', '~> 3.0.3'
 end
+
+
+
+
+ # Pods for TranslateMaste
+
+
+
+
