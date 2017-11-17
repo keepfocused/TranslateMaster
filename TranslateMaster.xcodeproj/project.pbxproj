@@ -13,6 +13,8 @@
 		83725DC21FBE124700174518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83725DC01FBE124700174518 /* Main.storyboard */; };
 		83725DC41FBE124700174518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83725DC31FBE124700174518 /* Assets.xcassets */; };
 		83725DC71FBE124700174518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83725DC51FBE124700174518 /* LaunchScreen.storyboard */; };
+		83793FC91FBF7B6400EA8F73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83793FC81FBF7B6400EA8F73 /* GoogleService-Info.plist */; };
+		83793FCB1FBF7EBE00EA8F73 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83793FCA1FBF7EBE00EA8F73 /* AdSupport.framework */; };
 		9EA18E0A4AA42C8CD7BADCC8 /* Pods_TranslateMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA17B34A5ED5195F37021F /* Pods_TranslateMaster.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		83725DC31FBE124700174518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83725DC61FBE124700174518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83725DC81FBE124700174518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83793FC81FBF7B6400EA8F73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		83793FCA1FBF7EBE00EA8F73 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C1DA1F48073C39B366A2BAD0 /* Pods-TranslateMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranslateMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranslateMaster/Pods-TranslateMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		D0BA17B34A5ED5195F37021F /* Pods_TranslateMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TranslateMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51D388F79882AA6ACAFFA1B /* Pods-TranslateMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranslateMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-TranslateMaster/Pods-TranslateMaster.release.xcconfig"; sourceTree = "<group>"; };
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83793FCB1FBF7EBE00EA8F73 /* AdSupport.framework in Frameworks */,
 				9EA18E0A4AA42C8CD7BADCC8 /* Pods_TranslateMaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +50,7 @@
 		2B4EF5C71CE341F6D8C016C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				83793FCA1FBF7EBE00EA8F73 /* AdSupport.framework */,
 				D0BA17B34A5ED5195F37021F /* Pods_TranslateMaster.framework */,
 			);
 			name = Frameworks;
@@ -73,6 +79,7 @@
 			children = (
 				83725DBA1FBE124700174518 /* AppDelegate.swift */,
 				83725DBC1FBE124700174518 /* FirstViewController.swift */,
+				83793FC81FBF7B6400EA8F73 /* GoogleService-Info.plist */,
 				83725DBE1FBE124700174518 /* SecondViewController.swift */,
 				83725DC01FBE124700174518 /* Main.storyboard */,
 				83725DC31FBE124700174518 /* Assets.xcassets */,
@@ -154,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83725DC71FBE124700174518 /* LaunchScreen.storyboard in Resources */,
+				83793FC91FBF7B6400EA8F73 /* GoogleService-Info.plist in Resources */,
 				83725DC41FBE124700174518 /* Assets.xcassets in Resources */,
 				83725DC21FBE124700174518 /* Main.storyboard in Resources */,
 			);
