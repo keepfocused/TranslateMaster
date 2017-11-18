@@ -10,7 +10,7 @@ import GoogleAPIClientForREST
 import GoogleSignIn
 import UIKit
 
-class FirstViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
+class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
     
     // If modifying these scopes, delete your previously saved credentials by
