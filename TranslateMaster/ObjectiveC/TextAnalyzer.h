@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TextAnalyzer : NSObject 
+@interface TextAnalyzer : NSObject
+
+@property (strong, nonatomic) NSString* textForImport;
+@property (strong, nonatomic) NSArray* analyzedWords;
 
 @end

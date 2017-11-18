@@ -51,7 +51,8 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
             self.signInButton.isHidden = true
             self.output.isHidden = false
             self.service.authorizer = user.authentication.fetcherAuthorizer()
-            fetchLabels()
+            //fetchLabels()
+            fetchMessagesList()
         }
     }
     
@@ -84,6 +85,19 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
             labelString = "No labels found."
         }
         output.text = labelString
+    }
+    
+    func fetchMessagesList()
+    {
+        let query = GTLRGmailQuery_UsersMessagesList.query(withUserId: "me")
+        query.q = "testMessage"
+        service.executeQuery(query, delegate: self, didFinish: #selector(printMessagesList(ticket:finishedWithObjetct:error:)))
+        
+    }
+    
+    func printMessagesList(ticket: GTLRServiceTicket, finishedWithObjetct listMessagesResponse : GTLRGmail_ListMessagesResponse, error : NSError?)
+    {
+     print(listMessagesResponse)
     }
     
     
