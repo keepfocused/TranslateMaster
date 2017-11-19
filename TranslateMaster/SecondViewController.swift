@@ -15,14 +15,18 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func searchButton(_ sender: UIButton) {
+        
+        self.view.backgroundColor = UIColor .red
+        self.view.backgroundColor = UIColor .green
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        print("Second vc did appear")
-    }
+    
+    @IBOutlet weak var messageForSearchTexField: UITextField!
+    
+    @IBOutlet weak var infoTextLabel: UILabel!
+    
 
 
 }
