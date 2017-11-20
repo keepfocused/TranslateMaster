@@ -95,9 +95,21 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
         
     }
     
+    func fetchMessageById(id :String) -> String
+    {
+        let query = GTLRGmailQuery_UsersMessagesGet.query(withUserId: "me", identifier: id)
+        service.executeQuery(query, delegate: self, didFinish: #selector())
+
+    }
+    
     func printMessagesList(ticket: GTLRServiceTicket, finishedWithObjetct listMessagesResponse : GTLRGmail_ListMessagesResponse, error : NSError?)
     {
-     print(listMessagesResponse)
+     
+        print("printMessageMethod was called")
+        if (listMessagesResponse.messages != nil)
+        { print(listMessagesResponse)}
+        else {print("No response object")
+    }
     }
     
     

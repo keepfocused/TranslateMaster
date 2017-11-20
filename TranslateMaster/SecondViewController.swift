@@ -14,9 +14,9 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var mailSearchService = GoogleAuthViewController()
+        let mailSearchService = GoogleAuthViewController()
         
-        mailSearchService 
+        mailSearchService .fetchMessagesList()
         
         
         
