@@ -98,8 +98,12 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
     func fetchMessageById(id :String) -> String
     {
         let query = GTLRGmailQuery_UsersMessagesGet.query(withUserId: "me", identifier: id)
-        service.executeQuery(query, delegate: self, didFinish: #selector())
+        service.executeQuery(query, delegate: self, didFinish: #selector(printFetchedMessage))
 
+    }
+    
+    func printFetchedMessage(parameters) -> <#return type#> {
+        <#function body#>
     }
     
     func printMessagesList(ticket: GTLRServiceTicket, finishedWithObjetct listMessagesResponse : GTLRGmail_ListMessagesResponse, error : NSError?)
