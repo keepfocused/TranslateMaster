@@ -102,8 +102,9 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
 
     }
     
-    func printFetchedMessage(parameters) -> <#return type#> {
-        <#function body#>
+    func printFetchedMessage ticket: GTLRServiceTicket, finishedWithObjetct listMessagesResponse : GTLRGmail_ListMessagesResponse, error : NSError?)
+    {
+        print "fetched message is (message)"
     }
     
     func printMessagesList(ticket: GTLRServiceTicket, finishedWithObjetct listMessagesResponse : GTLRGmail_ListMessagesResponse, error : NSError?)
