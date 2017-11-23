@@ -65,6 +65,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		836A076F1FC734CC00EB3517 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				83725DBA1FBE124700174518 /* AppDelegate.swift */,
+				83793FC81FBF7B6400EA8F73 /* GoogleService-Info.plist */,
+				83725DC31FBE124700174518 /* Assets.xcassets */,
+				83725DC51FBE124700174518 /* LaunchScreen.storyboard */,
+				83725DC81FBE124700174518 /* Info.plist */,
+				836EB9E61FC0B93D00109E37 /* TranslateMaster-Bridging-Header.h */,
+			);
+			name = Helpers;
+			path = TranslateMaster;
+			sourceTree = "<group>";
+		};
 		836EB9ED1FC0B94900109E37 /* Obj-C sort logic */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,12 +88,15 @@
 				836EB9EA1FC0B93D00109E37 /* WordData.m */,
 			);
 			name = "Obj-C sort logic";
+			path = TranslateMaster;
 			sourceTree = "<group>";
 		};
 		83725DAE1FBE124700174518 = {
 			isa = PBXGroup;
 			children = (
 				83725DB91FBE124700174518 /* TranslateMaster */,
+				836EB9ED1FC0B94900109E37 /* Obj-C sort logic */,
+				836A076F1FC734CC00EB3517 /* Helpers */,
 				83725DB81FBE124700174518 /* Products */,
 				F373780C61B314D3FC464002 /* Pods */,
 				2B4EF5C71CE341F6D8C016C9 /* Frameworks */,
@@ -97,17 +114,10 @@
 		83725DB91FBE124700174518 /* TranslateMaster */ = {
 			isa = PBXGroup;
 			children = (
-				836EB9ED1FC0B94900109E37 /* Obj-C sort logic */,
-				83725DBA1FBE124700174518 /* AppDelegate.swift */,
 				83725DBC1FBE124700174518 /* GoogleAuthViewController.swift */,
 				83725DBE1FBE124700174518 /* SecondViewController.swift */,
 				836EB9E21FC09BEB00109E37 /* SortLogic.swift */,
-				83793FC81FBF7B6400EA8F73 /* GoogleService-Info.plist */,
 				83725DC01FBE124700174518 /* Main.storyboard */,
-				83725DC31FBE124700174518 /* Assets.xcassets */,
-				83725DC51FBE124700174518 /* LaunchScreen.storyboard */,
-				83725DC81FBE124700174518 /* Info.plist */,
-				836EB9E61FC0B93D00109E37 /* TranslateMaster-Bridging-Header.h */,
 			);
 			path = TranslateMaster;
 			sourceTree = "<group>";

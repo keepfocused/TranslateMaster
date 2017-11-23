@@ -52,7 +52,18 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
             self.output.isHidden = false
             self.service.authorizer = user.authentication.fetcherAuthorizer()
             //fetchLabels()
+            
+            print("self service = \(self.service) \n")
+            print("user.auth.fetcherAuth = \(user.authentication.fetcherAuthorizer()) \n")
+
+            
+            print("GIGSignIN.sharedInstance = \(GIDSignIn.sharedInstance) \n")
+            
+            
+            
             fetchMessagesList()
+            
+ 
         }
     }
     
@@ -95,17 +106,17 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
         
     }
     
-    func fetchMessageById(id :String) -> String
-    {
-        let query = GTLRGmailQuery_UsersMessagesGet.query(withUserId: "me", identifier: id)
-        service.executeQuery(query, delegate: self, didFinish: #selector(printFetchedMessage))
-
-    }
+//    func fetchMessageById(id :String) -> String
+//    {
+//        let query = GTLRGmailQuery_UsersMessagesGet.query(withUserId: "me", identifier: id)
+//        service.executeQuery(query, delegate: self, didFinish: #selector(printFetchedMessage))
+//
+//    }
     
-    func printFetchedMessage ticket: GTLRServiceTicket, finishedWithObjetct listMessagesResponse : GTLRGmail_ListMessagesResponse, error : NSError?)
-    {
-        print "fetched message is (message)"
-    }
+//    func printFetchedMessage ticket: GTLRServiceTicket, finishedWithObjetct listMessagesResponse : GTLRGmail_ListMessagesResponse, error : NSError?)
+//    {
+//        print "fetched message is (message)"
+//    }
     
     func printMessagesList(ticket: GTLRServiceTicket, finishedWithObjetct listMessagesResponse : GTLRGmail_ListMessagesResponse, error : NSError?)
     {

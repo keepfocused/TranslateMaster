@@ -7,33 +7,51 @@
 //
 
 import UIKit
+import GoogleSignIn
+import GoogleAPIClientForREST
+
 
 
 class SecondViewController: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let mailSearchService = GoogleAuthViewController()
+    
+
         
-        mailSearchService .fetchMessagesList()
-        
-        
-        
+        GIDSignIn.sharedInstance()        
 
     }
 
 
     @IBAction func searchButton(_ sender: UIButton) {
         
-        self.view.backgroundColor = UIColor .red
+        
+        
+        self.messageForSearchTexField .resignFirstResponder()
+  
+
+
+
+
         self.view.backgroundColor = UIColor .green
     }
+    
+
+
     
     
     @IBOutlet weak var messageForSearchTexField: UITextField!
     
     @IBOutlet weak var infoTextLabel: UILabel!
+    
+    
+     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
+        self.messageForSearchTexField .resignFirstResponder()
+    }
     
 
 
