@@ -14,6 +14,9 @@ import GoogleAPIClientForREST
 
 class SecondViewController: UIViewController {
     
+    public var messageSubject = ""
+    public var authData:GIDGoogleUser = GIDGoogleUser()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +31,9 @@ class SecondViewController: UIViewController {
 
     @IBAction func searchButton(_ sender: UIButton) {
         
+        messageSubject = messageForSearchTexField.text!
         
+ 
         
         self.messageForSearchTexField .resignFirstResponder()
   

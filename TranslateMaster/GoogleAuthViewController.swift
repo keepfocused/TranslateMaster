@@ -20,6 +20,7 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
     private let service = GTLRGmailService()
     let signInButton = GIDSignInButton()
     let output = UITextView()
+    var authResponseObject = GIDGoogleUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,17 +52,10 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
             self.signInButton.isHidden = true
             self.output.isHidden = false
             self.service.authorizer = user.authentication.fetcherAuthorizer()
-            //fetchLabels()
+            self.authResponseObject = user
             
-            print("self service = \(self.service) \n")
-            print("user.auth.fetcherAuth = \(user.authentication.fetcherAuthorizer()) \n")
-
-            
-            print("GIGSignIN.sharedInstance = \(GIDSignIn.sharedInstance) \n")
-            
-            
-            
-            fetchMessagesList()
+            let segueIdentifier = "searchMessageId"
+            performSegue(withIdentifier: segueIdentifier, sender: nil)
             
  
         }
@@ -126,6 +120,16 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
         { print(listMessagesResponse)}
         else {print("No response object")
     }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "segueIdentifier"
+        {
+            let vc = SecondViewController()
+            vc.authData = self.authResponseObject
+        
+        }
     }
     
     
