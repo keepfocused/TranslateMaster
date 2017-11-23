@@ -20,7 +20,7 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
     private let service = GTLRGmailService()
     let signInButton = GIDSignInButton()
     let output = UITextView()
-    var authResponseObject = GIDGoogleUser()
+    var authResponseObject:GIDGoogleUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,10 +124,14 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "segueIdentifier"
+        if segue.identifier == "searchMessageId"
         {
-            let vc = SecondViewController()
-            vc.authData = self.authResponseObject
+            let authData = self.authResponseObject!
+            
+            if let destinationViewController = segue.destination as? SecondViewController {
+                destinationViewController.authData = authData
+            }
+            
         
         }
     }

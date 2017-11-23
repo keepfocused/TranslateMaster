@@ -12,7 +12,7 @@
         <!--Item-->
         <scene sceneID="gKn-v1-xpP">
             <objects>
-                <viewController id="w2P-4l-0RB" sceneMemberID="viewController">
+                <viewController id="w2P-4l-0RB" customClass="GoogleAuthViewController" customModule="TranslateMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BKW-72-R6J"/>
                         <viewControllerLayoutGuide type="bottom" id="CoC-80-MOF"/>
@@ -90,8 +90,8 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="sue-Kj-uK3" kind="relationship" relationship="viewControllers" id="5Xl-Tf-KA7"/>
                         <segue destination="w2P-4l-0RB" kind="relationship" relationship="viewControllers" id="WQi-45-Fdj"/>
+                        <segue destination="sue-Kj-uK3" kind="relationship" relationship="viewControllers" id="5Xl-Tf-KA7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
