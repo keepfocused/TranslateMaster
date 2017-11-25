@@ -21,6 +21,8 @@ class SecondViewController: UIViewController {
     
     public var authData:GIDGoogleUser?
     private let service = GTLRGmailService()
+    
+    private var messageId:String?
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +55,21 @@ class SecondViewController: UIViewController {
         let query = GTLRGmailQuery_UsersMessagesList.query(withUserId: "me")
         query.q = message
         service.executeQuery(query, delegate: self, didFinish: #selector(printMessagesList(ticket:finishedWithObjetct:error:)))
+        
+        
     }
+    
+    
+    func fetchMessageById(id :String) 
+    {
+        let query = GTLRGmailQuery_UsersMessagesGet.query(withUserId: "me", identifier: id)
+        service.executeQuery(query, delegate: self, didFinish: nil)
+        
+
+    }
+    
+    
+    
     
     
     
@@ -63,7 +79,13 @@ class SecondViewController: UIViewController {
         
 
         if (listMessagesResponse.messages != nil)
-        { print(listMessagesResponse)}
+        {
+            print(listMessagesResponse)
+            //messageId = listMessagesResponse.messages?.count
+            let arrayCount = listMessagesResponse.messages?.count
+            print("array of response messages count =  \(arrayCount)")
+            
+        }
         else {print("No response object")
         }
     }
