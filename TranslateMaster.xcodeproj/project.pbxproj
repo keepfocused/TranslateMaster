@@ -18,6 +18,7 @@
 		83725DC71FBE124700174518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83725DC51FBE124700174518 /* LaunchScreen.storyboard */; };
 		83793FC91FBF7B6400EA8F73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83793FC81FBF7B6400EA8F73 /* GoogleService-Info.plist */; };
 		83793FCB1FBF7EBE00EA8F73 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83793FCA1FBF7EBE00EA8F73 /* AdSupport.framework */; };
+		83F73E171FCDFE8500B1BA10 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F73E161FCDFE8500B1BA10 /* WordsViewController.swift */; };
 		9EA18E0A4AA42C8CD7BADCC8 /* Pods_TranslateMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA17B34A5ED5195F37021F /* Pods_TranslateMaster.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		83725DC81FBE124700174518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83793FC81FBF7B6400EA8F73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83793FCA1FBF7EBE00EA8F73 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		83F73E161FCDFE8500B1BA10 /* WordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
 		C1DA1F48073C39B366A2BAD0 /* Pods-TranslateMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranslateMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranslateMaster/Pods-TranslateMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		D0BA17B34A5ED5195F37021F /* Pods_TranslateMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TranslateMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51D388F79882AA6ACAFFA1B /* Pods-TranslateMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranslateMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-TranslateMaster/Pods-TranslateMaster.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				83725DBE1FBE124700174518 /* SecondViewController.swift */,
 				836EB9E21FC09BEB00109E37 /* SortLogic.swift */,
 				83725DC01FBE124700174518 /* Main.storyboard */,
+				83F73E161FCDFE8500B1BA10 /* WordsViewController.swift */,
 			);
 			path = TranslateMaster;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			files = (
 				836EB9E31FC09BEB00109E37 /* SortLogic.swift in Sources */,
 				836EB9EC1FC0B93D00109E37 /* WordData.m in Sources */,
+				83F73E171FCDFE8500B1BA10 /* WordsViewController.swift in Sources */,
 				83725DBF1FBE124700174518 /* SecondViewController.swift in Sources */,
 				83725DBB1FBE124700174518 /* AppDelegate.swift in Sources */,
 				83725DBD1FBE124700174518 /* GoogleAuthViewController.swift in Sources */,

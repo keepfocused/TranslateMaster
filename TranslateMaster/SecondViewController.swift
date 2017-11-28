@@ -60,7 +60,7 @@ class SecondViewController: UIViewController {
     }
     
     
-    func fetchMessageById(id :String) 
+    func fetchMessageById(id :String)
     {
         let query = GTLRGmailQuery_UsersMessagesGet.query(withUserId: "me", identifier: id)
         service.executeQuery(query, delegate: self, didFinish: nil)
@@ -81,9 +81,10 @@ class SecondViewController: UIViewController {
         if (listMessagesResponse.messages != nil)
         {
             print(listMessagesResponse)
+            let tempSingleResponseObject = listMessagesResponse.messages?.first
             //messageId = listMessagesResponse.messages?.count
-            let arrayCount = listMessagesResponse.messages?.count
-            print("array of response messages count =  \(arrayCount)")
+            let arrayCount = listMessagesResponse.messages?.first
+            print("array of response messages  =  \(arrayCount)")
             
         }
         else {print("No response object")
