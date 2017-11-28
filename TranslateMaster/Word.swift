@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class Word {
+    
+    public var english = ""
+    public var russian = ""
+    public var isKnown = false
+    public var countOfShow = 0
+}
