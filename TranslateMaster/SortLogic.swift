@@ -11,3 +11,9 @@ import Foundation
 //test
 //test
 //test
+
+class objCCopyLogic
+{
+    public var newString:String?
+    
+}
