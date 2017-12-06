@@ -11,6 +11,7 @@ import Foundation
 //test
 //test
 //test
+//newString
 
 class objCCopyLogic
 {

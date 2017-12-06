@@ -16,3 +16,5 @@ class Word {
     public var countOfShow = 0
 }
 //test
+//newTest
+//newVar
