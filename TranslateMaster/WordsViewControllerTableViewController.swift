@@ -17,6 +17,9 @@ class WordsViewControllerTableViewController: UITableViewController {
         super.viewDidLoad()
 
         //test
+        //newVariable
+        //newTestString
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
