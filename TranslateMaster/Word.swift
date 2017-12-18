@@ -18,3 +18,6 @@ class Word {
 //test
 //newTest
 //newVar
+
+
+//new count
