@@ -36,6 +36,8 @@ class SearchViewController: UIViewController {
         
         service.authorizer = authData?.authentication.fetcherAuthorizer()
         
+        print("AUTH DATA = \(authData?.userID)")
+        
     }
     
     
@@ -67,17 +69,32 @@ class SearchViewController: UIViewController {
     func fetchMessageById(id :String)
     {
         let query = GTLRGmailQuery_UsersMessagesGet.query(withUserId: "me", identifier: id)
-        service.executeQuery(query, delegate: self, didFinish: #selector(printFetchedMessage(ticket:finishedWithObjetct:error:)))
+        //query.format = "full"
+        service.executeQuery(query, delegate: self, didFinish: #selector(printFetchedMessage(ticket: finishedWithObjetct:error:)))
+        
+        print("message fetched succeseful")
+        
+        
         
         
     }
     
     
-    func printFetchedMessage (ticket: GTLRServiceTicket, finishedWithObjetct responseMessage : GTLRGmail_ListMessagesResponse, error : NSError?)
+    func printFetchedMessage (ticket: GTLRServiceTicket, finishedWithObjetct responseMessage :AnyObject , error : NSError?)
     {
+        
         print ("fetched message is \(responseMessage)")
-        let tempDict:Dictionary = responseMessage
-        responseLabel = responseMessage.
+        
+        let tempDict = responseMessage as? Dictionary<String, Any>
+            
+            print ("try to cast dictionary")
+            print ("\(tempDict?["sizeEstimate"])")
+        tempDict["payload"]
+        
+        
+       // let tempDict:Dictionary = responseMessage
+        //responseLabel.text = tempDict["snippet"]
+        print("print fetch message executed")
     }
     
     
