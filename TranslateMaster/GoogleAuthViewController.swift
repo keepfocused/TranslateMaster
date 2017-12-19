@@ -10,6 +10,7 @@ import GoogleAPIClientForREST
 import GoogleSignIn
 import UIKit
 
+
 class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
     
@@ -128,7 +129,7 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
         {
             let authData = self.authResponseObject!
             
-            if let destinationViewController = segue.destination as? SecondViewController {
+            if let destinationViewController = segue.destination as? SearchViewController {
                 destinationViewController.authData = authData
             }
             

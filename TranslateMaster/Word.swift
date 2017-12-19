@@ -15,9 +15,4 @@ class Word {
     public var isKnown = false
     public var countOfShow = 0
 }
-//test
-//newTest
-//newVar
 
-
-//new count
