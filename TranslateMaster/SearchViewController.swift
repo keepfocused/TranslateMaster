@@ -67,9 +67,17 @@ class SearchViewController: UIViewController {
     func fetchMessageById(id :String)
     {
         let query = GTLRGmailQuery_UsersMessagesGet.query(withUserId: "me", identifier: id)
-        service.executeQuery(query, delegate: self, didFinish: nil)
+        service.executeQuery(query, delegate: self, didFinish: #selector(printFetchedMessage(ticket:finishedWithObjetct:error:)))
         
         
+    }
+    
+    
+    func printFetchedMessage (ticket: GTLRServiceTicket, finishedWithObjetct responseMessage : GTLRGmail_ListMessagesResponse, error : NSError?)
+    {
+        print ("fetched message is \(responseMessage)")
+        let tempDict:Dictionary = responseMessage
+        responseLabel = responseMessage.
     }
     
     
@@ -98,6 +106,9 @@ class SearchViewController: UIViewController {
             
             
             self.responseLabel.text = listMessagesResponse.messages?.first?.identifier
+            messageId = listMessagesResponse.messages?.first?.identifier
+            
+            fetchMessageById(id: messageId!)
             
         }
         else {print("No response object")

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--GoogleAuth-->
         <scene sceneID="gKn-v1-xpP">
             <objects>
-                <viewController id="w2P-4l-0RB" customClass="GoogleAuthViewController" customModule="TranslateMaster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="w2P-4l-0RB" userLabel="GoogleAuth" customClass="GoogleAuthViewController" customModule="TranslateMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BKW-72-R6J"/>
                         <viewControllerLayoutGuide type="bottom" id="CoC-80-MOF"/>
@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="969" y="376"/>
         </scene>
-        <!--Second-->
+        <!--SearchMessage-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SearchViewController" customModule="TranslateMaster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" userLabel="SearchMessage" customClass="SearchViewController" customModule="TranslateMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -81,7 +81,6 @@
                         <outlet property="infoTextLabel" destination="NDk-cv-Gan" id="0fT-1D-2W0"/>
                         <outlet property="messageForSearchTexField" destination="ec7-CF-uBA" id="UH7-e9-2Bs"/>
                         <outlet property="responseLabel" destination="hcE-FB-eF3" id="5oc-PQ-VJI"/>
-                        <outlet property="viewName" destination="hcE-FB-eF3" id="E1R-Lq-qbG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
