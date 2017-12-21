@@ -12,6 +12,24 @@ import UIKit
 import GoogleSignIn
 import GoogleAPIClientForREST
 
+extension String {
+    //: ### Base64 encoding a string
+    func base64Encoded() -> String? {
+        if let data = self.data(using: .utf8) {
+            return data.base64EncodedString()
+        }
+        return nil
+    }
+    
+    //: ### Base64 decoding a string
+    func base64Decoded() -> String? {
+        if let data = Data(base64Encoded: self) {
+            return String(data: data, encoding: .utf8)
+        }
+        return nil
+    }
+}
+
 
 
 class SearchViewController: UIViewController {
@@ -69,7 +87,7 @@ class SearchViewController: UIViewController {
     func fetchMessageById(id :String)
     {
         let query = GTLRGmailQuery_UsersMessagesGet.query(withUserId: "me", identifier: id)
-        //query.format = "full"
+        //query.format = "raw"
         service.executeQuery(query, delegate: self, didFinish: #selector(printFetchedMessage(ticket: finishedWithObjetct:error:)))
         
         print("message fetched succeseful")
@@ -80,21 +98,30 @@ class SearchViewController: UIViewController {
     }
     
     
-    func printFetchedMessage (ticket: GTLRServiceTicket, finishedWithObjetct responseMessage :AnyObject , error : NSError?)
+    func printFetchedMessage (ticket: GTLRServiceTicket, finishedWithObjetct responseMessage :GTLRGmail_Message , error : NSError?)
     {
         
         print ("fetched message is \(responseMessage)")
         
-        let tempDict = responseMessage as? Dictionary<String, Any>
-            
-            print ("try to cast dictionary")
-            print ("\(tempDict?["sizeEstimate"])")
-        tempDict["payload"]
+        let base64 = responseMessage.payload?.body?.data
+        
+        let data = base64?.data(using: .utf8)
+        
+        let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
         
         
-       // let tempDict:Dictionary = responseMessage
-        //responseLabel.text = tempDict["snippet"]
-        print("print fetch message executed")
+        print ("print json = \(json)")
+        
+        //print (decodedResponseStringBase64)
+        
+//        if let decodedData = NSData(base64Encoded: decodedResponseStringBase64!, options: NSData.Base64DecodingOptions(rawValue: 0)),
+//            let decodedString = NSString(data: decodedData as Data, encoding: String.dec.utf8.rawValue) {
+//            print(decodedString) // foo
+//        }
+
+        
+        
+
     }
     
     
@@ -118,7 +145,10 @@ class SearchViewController: UIViewController {
             let messagesArray = listMessagesResponse.messages
             for message:GTLRGmail_Message in messagesArray!
             {
+                print("message identifier")
                 print(message.identifier)
+                print("testing payload")
+                print(message.payload)
             }
             
             
