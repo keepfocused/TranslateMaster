@@ -21,6 +21,8 @@ extension String {
         return nil
     }
     
+    //need to convert response to json & after decode it as base64
+    
     //: ### Base64 decoding a string
     func base64Decoded() -> String? {
         if let data = Data(base64Encoded: self) {
