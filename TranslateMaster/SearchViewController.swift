@@ -23,6 +23,9 @@ extension String {
     
     //need to convert response to json & after decode it as base64
     
+    //new String
+    //new new string 
+    
     //: ### Base64 decoding a string
     func base64Decoded() -> String? {
         if let data = Data(base64Encoded: self) {
