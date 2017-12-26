@@ -26,6 +26,8 @@ extension String {
     //new String
     //new new string 
     
+    //help string 
+    
     //: ### Base64 decoding a string
     func base64Decoded() -> String? {
         if let data = Data(base64Encoded: self) {
