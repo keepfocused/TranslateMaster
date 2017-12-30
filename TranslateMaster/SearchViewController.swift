@@ -41,6 +41,9 @@ extension String {
 
 
 
+
+
+
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var messageForSearchTexField: UITextField!
@@ -58,7 +61,13 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         
+        func resetData() {
+            print("data reset called")
+        }
         
+        fucn rewriteData() {
+            print("old data replaced with new data")
+        }
         
         
         service.authorizer = authData?.authentication.fetcherAuthorizer()
