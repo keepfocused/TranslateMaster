@@ -117,17 +117,47 @@ class SearchViewController: UIViewController {
         
         let base64Encoded = responseMessage.payload?.body?.data
         
+        let separatedParts = base64Encoded?.components(separatedBy: "-")
+        
+        print ("count of separated parts = \(separatedParts?.count)")
+        
+       // print ("FIRST OBJ of separated parts = \(separatedParts?.first)")
+        
         //let data = base64?.data(using: .utf8)
         
-        print ("data decoded = \(base64Encoded)")
+       // print ("separated parts = \(separatedParts)")
         
-        if base64Encoded != nil {
-            
-            let decodedData = Data(base64Encoded: base64Encoded!)!
-            let decodedString = String(data: decodedData, encoding: .utf8)!
-            print ("data decoded = \(base64Encoded)")
-            
-        }
+        let test = separatedParts?.first!
+        
+        let decodedData = Data(base64Encoded: test!)!
+        let decodedString = String(data: decodedData, encoding: .utf8)!
+        
+        print("test decoded string = \(test)")
+
+        print("test decoded string = \(decodedString)")
+
+        
+        
+        
+        
+        
+//        for base64Encoded:String in separatedParts!
+//        {
+//            //let decodedData = Data(base64Encoded: base64Encoded)!
+//            //let decodedString = String(data: decodedData, encoding: .utf8)!
+//            let tempStr = base64Encoded.base64Decoded()
+//            print ("data decoded = \(tempStr)")
+//
+//        }
+        
+        //print ("data decoded = \(base64Encoded)")
+
+        
+//            let decodedData = Data(base64Encoded: base64Encoded!)!
+//            let decodedString = String(data: decodedData, encoding: .utf8)!
+//            print ("data decoded = \(base64Encoded)")
+        
+
         
         //let decodedData = Data(base64Encoded: base64Encoded!)!
         //let decodedString = String(data: decodedData, encoding: .utf8)!
