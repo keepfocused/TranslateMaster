@@ -129,15 +129,14 @@ class SearchViewController: UIViewController {
         
         let test = separatedParts?.first!
         
-        let decodedData = Data(base64Encoded: test!)!
-        let decodedString = String(data: decodedData, encoding: .utf8)!
+      //  let decodedData = Data(base64Encoded: test!)!
+        let decodedString = test?.base64Decoded()
         
-        print("test decoded string = \(test)")
-
         print("test decoded string = \(decodedString)")
 
+        //print("test decoded string = \(decodedString)")
         
-        
+               
         
         
         
