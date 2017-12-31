@@ -61,13 +61,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         
-        func resetData() {
-            print("data reset called")
-        }
-        
-        fucn rewriteData() {
-            print("old data replaced with new data")
-        }
+
         
         
         service.authorizer = authData?.authentication.fetcherAuthorizer()
@@ -121,14 +115,31 @@ class SearchViewController: UIViewController {
         
         print ("fetched message is \(responseMessage)")
         
-        let base64 = responseMessage.payload?.body?.data
+        let base64Encoded = responseMessage.payload?.body?.data
         
-        let data = base64?.data(using: .utf8)
+        //let data = base64?.data(using: .utf8)
         
-        let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
+        print ("data decoded = \(base64Encoded)")
+        
+        if base64Encoded != nil {
+            
+            let decodedData = Data(base64Encoded: base64Encoded!)!
+            let decodedString = String(data: decodedData, encoding: .utf8)!
+            print ("data decoded = \(base64Encoded)")
+            
+        }
+        
+        //let decodedData = Data(base64Encoded: base64Encoded!)!
+        //let decodedString = String(data: decodedData, encoding: .utf8)!
         
         
-        print ("print json = \(json)")
+        
+        
+        
+        //let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
+        
+        
+       // print ("print json = \(json)")
         
         //print (decodedResponseStringBase64)
         
