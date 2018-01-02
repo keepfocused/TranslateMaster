@@ -129,6 +129,10 @@ class SearchViewController: UIViewController {
         
         let test = separatedParts?.first!
         
+        func testingInputData {
+            
+        }
+        
       //  let decodedData = Data(base64Encoded: test!)!
         let decodedString = test?.base64Decoded()
         
