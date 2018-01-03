@@ -12,36 +12,6 @@ import UIKit
 import GoogleSignIn
 import GoogleAPIClientForREST
 
-extension String {
-    //: ### Base64 encoding a string
-    func base64Encoded() -> String? {
-        if let data = self.data(using: .utf8) {
-            return data.base64EncodedString()
-        }
-        return nil
-    }
-    
-    //need to convert response to json & after decode it as base64
-    
-    //new String
-    //new new string 
-    
-    //help string 
-    
-    // change upload adress
-    
-    //: ### Base64 decoding a string
-    func base64Decoded() -> String? {
-        if let data = Data(base64Encoded: self) {
-            return String(data: data, encoding: .utf8)
-        }
-        return nil
-    }
-}
-
-
-
-
 
 
 class SearchViewController: UIViewController {
@@ -100,95 +70,43 @@ class SearchViewController: UIViewController {
     {
         let query = GTLRGmailQuery_UsersMessagesGet.query(withUserId: "me", identifier: id)
         //query.format = "raw"
-        service.executeQuery(query, delegate: self, didFinish: #selector(printFetchedMessage(ticket: finishedWithObjetct:error:)))
+        service.executeQuery(query, delegate: self, didFinish: #selector(manageFetchedMessage(ticket: finishedWithObjetct:error:)))
         
         print("message fetched succeseful")
         
         
-        
-        
     }
     
     
-    func printFetchedMessage (ticket: GTLRServiceTicket, finishedWithObjetct responseMessage :GTLRGmail_Message , error : NSError?)
+    func manageFetchedMessage (ticket: GTLRServiceTicket, finishedWithObjetct responseMessage :GTLRGmail_Message , error : NSError?)
     {
         
         print ("fetched message is \(responseMessage)")
         
-        let base64Encoded = responseMessage.payload?.body?.data
+        let rawData = responseMessage.payload?.body?.data
         
-        let separatedParts = base64Encoded?.components(separatedBy: "-")
+        let tempString = rawData?.replacingOccurrences(of: "_", with: "/")
         
-        print ("count of separated parts = \(separatedParts?.count)")
+        let base64Encoded = tempString?.replacingOccurrences(of: "-", with: "+")
         
-       // print ("FIRST OBJ of separated parts = \(separatedParts?.first)")
-        
-        //let data = base64?.data(using: .utf8)
-        
-       // print ("separated parts = \(separatedParts)")
-        
-        let test = separatedParts?.first!
-        
-        func testingInputData {
-            
-        }
-        
-      //  let decodedData = Data(base64Encoded: test!)!
-        let decodedString = test?.base64Decoded()
-        
-        print("test decoded string = \(decodedString)")
+        decodeBase64(base64Encoded: base64Encoded!)
 
-        //print("test decoded string = \(decodedString)")
-        
-               
-        
-        
-        
-//        for base64Encoded:String in separatedParts!
-//        {
-//            //let decodedData = Data(base64Encoded: base64Encoded)!
-//            //let decodedString = String(data: decodedData, encoding: .utf8)!
-//            let tempStr = base64Encoded.base64Decoded()
-//            print ("data decoded = \(tempStr)")
-//
-//        }
-        
-        //print ("data decoded = \(base64Encoded)")
-
-        
-//            let decodedData = Data(base64Encoded: base64Encoded!)!
-//            let decodedString = String(data: decodedData, encoding: .utf8)!
-//            print ("data decoded = \(base64Encoded)")
         
 
         
-        //let decodedData = Data(base64Encoded: base64Encoded!)!
-        //let decodedString = String(data: decodedData, encoding: .utf8)!
-        
-        
-        
-        
-        
-        //let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
-        
-        
-       // print ("print json = \(json)")
-        
-        //print (decodedResponseStringBase64)
-        
-//        if let decodedData = NSData(base64Encoded: decodedResponseStringBase64!, options: NSData.Base64DecodingOptions(rawValue: 0)),
-//            let decodedString = NSString(data: decodedData as Data, encoding: String.dec.utf8.rawValue) {
-//            print(decodedString) // foo
-//        }
-
-        
-        
-
     }
     
     
-    
-    
+    func decodeBase64(base64Encoded:String) -> String {
+        
+        let decodedData = Data(base64Encoded: base64Encoded)!
+        let decodedString = String(data: decodedData, encoding: .utf8)!
+        
+        print(decodedString)
+        
+        return decodedString
+        
+    }
     
     
     
@@ -198,22 +116,7 @@ class SearchViewController: UIViewController {
         
         if (listMessagesResponse.messages != nil)
         {
-            print("RESPONSE START HERE")
-            print(listMessagesResponse)
-            //let tempSingleResponseObject = listMessagesResponse.messages?.first
-            //messageId = listMessagesResponse.messages?.count
-            //let arrayCount = listMessagesResponse.messages?.first
-            //print("array of response messages  =  \(arrayCount)")
-            let messagesArray = listMessagesResponse.messages
-            for message:GTLRGmail_Message in messagesArray!
-            {
-                print("message identifier")
-                print(message.identifier)
-                print("testing payload")
-                print(message.payload)
-            }
-            
-            
+                        
             self.responseLabel.text = listMessagesResponse.messages?.first?.identifier
             messageId = listMessagesResponse.messages?.first?.identifier
             
@@ -225,19 +128,15 @@ class SearchViewController: UIViewController {
     }
     
     
-    
-    
-    
 
-    
-    
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         self.messageForSearchTexField .resignFirstResponder()
     }
     
+    @IBAction func proceedButton(_ sender: UIButton) {
+    }
     
     
 }
