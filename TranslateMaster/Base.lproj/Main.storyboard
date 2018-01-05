@@ -66,9 +66,11 @@
                                     <action selector="searchButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="3Cf-fU-KYW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcE-FB-eF3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcE-FB-eF3">
                                 <rect key="frame" x="33" y="28" width="308" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99130942644897957" green="1" blue="0.75505814086766232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Отправьте себе на почту письмо с английским текстом для анализа. Придумайте и укажите в теме письма уникальный id. Введите тему(id) письма в поле ниже</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

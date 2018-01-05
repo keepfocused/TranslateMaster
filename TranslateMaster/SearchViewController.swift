@@ -47,8 +47,6 @@ class SearchViewController: UIViewController {
         self.messageForSearchTexField .resignFirstResponder()
         
         lookForMessagExistence()
-        
-        self.view.backgroundColor = UIColor .green
     }
     
     
@@ -122,11 +120,28 @@ class SearchViewController: UIViewController {
             
             fetchMessageById(id: messageId!)
             
+            changeBackgroundColor()
+            
         }
         else {print("No response object")
         }
     }
     
+    func changeBackgroundColor()  {
+        
+//        let queue = DispatchQueue.global(qos: .userInteractive)
+//        
+//        queue.async {
+//            self.view.backgroundColor = UIColor .green
+//            usleep(1)
+//            self.view.backgroundColor = UIColor .red
+//        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+            // Put your code which should be executed with a delay here
+        })
+        
+    }
     
 
     
