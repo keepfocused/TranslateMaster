@@ -20,7 +20,6 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var infoTextLabel: UILabel!
     
-    @IBOutlet weak var responseLabel: UILabel!
     
     public var authData:GIDGoogleUser?
     private let service = GTLRGmailService()
@@ -30,7 +29,10 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.analyzeButtonOutlet.isHidden = true
+        self.contentTextView.isEditable = false
+        self.contentTextView.isScrollEnabled = true
+        self.contentTextView.showsVerticalScrollIndicator = true
 
         
         
@@ -46,8 +48,17 @@ class SearchViewController: UIViewController {
         
         self.messageForSearchTexField .resignFirstResponder()
         
-        lookForMessagExistence()
-    }
+        var string = messageForSearchTexField.text
+        
+        string = string?.replacingOccurrences(of: " ", with: "")
+        
+       
+        
+        if ((string?.characters.count)! >= 5)
+        {
+            lookForMessagExistence()
+        }
+            }
     
     
     
@@ -86,9 +97,15 @@ class SearchViewController: UIViewController {
         let tempString = rawData?.replacingOccurrences(of: "_", with: "/")
         
         let base64Encoded = tempString?.replacingOccurrences(of: "-", with: "+")
-        
-        decodeBase64(base64Encoded: base64Encoded!)
-
+        //Сделать проверку на возможность выполнения
+        if (base64Encoded != nil)
+        {
+            let decodedText = decodeBase64(base64Encoded: base64Encoded!)
+            
+            self.contentTextView.text = decodedText
+            
+            self.analyzeButtonOutlet.isHidden = false
+        }
         
 
         
@@ -115,32 +132,29 @@ class SearchViewController: UIViewController {
         if (listMessagesResponse.messages != nil)
         {
                         
-            self.responseLabel.text = listMessagesResponse.messages?.first?.identifier
+            //self.responseLabel.text = listMessagesResponse.messages?.first?.identifier
             messageId = listMessagesResponse.messages?.first?.identifier
             
             fetchMessageById(id: messageId!)
             
             changeBackgroundColor()
             
+            self.contentTextView.text = "Success! Message found"
+            
         }
-        else {print("No response object")
-        }
+        else {
+            self.contentTextView.text = "Message with currently id not found"        }
     }
     
     func changeBackgroundColor()  {
         
-//        let queue = DispatchQueue.global(qos: .userInteractive)
-//        
-//        queue.async {
-//            self.view.backgroundColor = UIColor .green
-//            usleep(1)
-//            self.view.backgroundColor = UIColor .red
-//        }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
-            // Put your code which should be executed with a delay here
+        self.view.backgroundColor = UIColor .green
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            
+            self.view.backgroundColor = UIColor .white
         })
-        
     }
     
 
@@ -149,10 +163,19 @@ class SearchViewController: UIViewController {
     {
         self.messageForSearchTexField .resignFirstResponder()
     }
+
     
-    @IBAction func proceedButton(_ sender: UIButton) {
+    
+    @IBOutlet weak var contentTextView: UITextView!
+    
+
+    @IBOutlet weak var analyzeButtonOutlet: UIButton!
+    
+    @IBAction func analyzeButtonAction(_ sender: UIButton) {
+        print("Analyze button pressed")
     }
-    
+
+
     
 }
 
