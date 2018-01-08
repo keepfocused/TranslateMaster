@@ -17,6 +17,8 @@
 		83725DC71FBE124700174518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83725DC51FBE124700174518 /* LaunchScreen.storyboard */; };
 		83793FC91FBF7B6400EA8F73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83793FC81FBF7B6400EA8F73 /* GoogleService-Info.plist */; };
 		83793FCB1FBF7EBE00EA8F73 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83793FCA1FBF7EBE00EA8F73 /* AdSupport.framework */; };
+		839B585B20017B96004C615E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839B585A20017B96004C615E /* CoreData.framework */; };
+		839B585F200190EC004C615E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 839B585D200190EC004C615E /* Model.xcdatamodeld */; };
 		83C7C8671FE985B000E65168 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C7C8661FE985B000E65168 /* SearchViewController.swift */; };
 		83F73E171FCDFE8500B1BA10 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F73E161FCDFE8500B1BA10 /* Word.swift */; };
 		83F73E191FCDFF1100B1BA10 /* WordsViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F73E181FCDFF1100B1BA10 /* WordsViewControllerTableViewController.swift */; };
@@ -39,6 +41,8 @@
 		83725DC81FBE124700174518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83793FC81FBF7B6400EA8F73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83793FCA1FBF7EBE00EA8F73 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		839B585A20017B96004C615E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		839B585E200190EC004C615E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		83C7C8661FE985B000E65168 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		83F73E161FCDFE8500B1BA10 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		83F73E181FCDFF1100B1BA10 /* WordsViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsViewControllerTableViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839B585B20017B96004C615E /* CoreData.framework in Frameworks */,
 				83793FCB1FBF7EBE00EA8F73 /* AdSupport.framework in Frameworks */,
 				9EA18E0A4AA42C8CD7BADCC8 /* Pods_TranslateMaster.framework in Frameworks */,
 			);
@@ -63,6 +68,7 @@
 		2B4EF5C71CE341F6D8C016C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				839B585A20017B96004C615E /* CoreData.framework */,
 				83793FCA1FBF7EBE00EA8F73 /* AdSupport.framework */,
 				D0BA17B34A5ED5195F37021F /* Pods_TranslateMaster.framework */,
 			);
@@ -99,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				83725DB91FBE124700174518 /* TranslateMaster */,
+				839B585C20017BA8004C615E /* CoreData */,
 				836EB9ED1FC0B94900109E37 /* Obj-C sort logic */,
 				836A076F1FC734CC00EB3517 /* Helpers */,
 				83725DB81FBE124700174518 /* Products */,
@@ -125,6 +132,15 @@
 				83F73E161FCDFE8500B1BA10 /* Word.swift */,
 				83F73E181FCDFF1100B1BA10 /* WordsViewControllerTableViewController.swift */,
 			);
+			path = TranslateMaster;
+			sourceTree = "<group>";
+		};
+		839B585C20017BA8004C615E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				839B585D200190EC004C615E /* Model.xcdatamodeld */,
+			);
+			name = CoreData;
 			path = TranslateMaster;
 			sourceTree = "<group>";
 		};
@@ -284,6 +300,7 @@
 				83C7C8671FE985B000E65168 /* SearchViewController.swift in Sources */,
 				83F73E171FCDFE8500B1BA10 /* Word.swift in Sources */,
 				83F73E191FCDFF1100B1BA10 /* WordsViewControllerTableViewController.swift in Sources */,
+				839B585F200190EC004C615E /* Model.xcdatamodeld in Sources */,
 				83725DBB1FBE124700174518 /* AppDelegate.swift in Sources */,
 				83725DBD1FBE124700174518 /* GoogleAuthViewController.swift in Sources */,
 				836EB9EB1FC0B93D00109E37 /* TextAnalyzer.m in Sources */,
@@ -458,6 +475,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		839B585D200190EC004C615E /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				839B585E200190EC004C615E /* Model.xcdatamodel */,
+			);
+			currentVersion = 839B585E200190EC004C615E /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = CoreData/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 83725DAF1FBE124700174518 /* Project object */;
 }

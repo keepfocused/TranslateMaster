@@ -9,8 +9,14 @@
 import Foundation
 
 
+let TextAnalyz = TextAnalyzer()
+
+
 class objCCopyLogic
 {
     public var newString:String?
+    
+    
+    
     
 }

@@ -25,13 +25,10 @@
 
 
 
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"quotes"
-                                                     ofType:@"txt"];
 
-
-    NSString* content = [NSString stringWithContentsOfFile:path
-                                                  encoding:NSUTF8StringEncoding
-                                                     error:NULL];
+    
+    
+    NSString* content = self.textForImport;
 
 
     NSArray* splitByLines = [content componentsSeparatedByString:@"\n"];
@@ -46,7 +43,21 @@
 
         NSString* tempStr2 = str;
 
-    while (([tempStr2 containsString:@"."] || [tempStr2 containsString:@""""] || [tempStr2 containsString:@","] || [tempStr2 containsString:@"//"] || [tempStr2 containsString:@"("] || [tempStr2 containsString:@"*"] || [tempStr2 containsString:@"_"]|| [tempStr2 containsString:@")"])) {
+    while (([tempStr2 containsString:@"."]  ||
+            [tempStr2 containsString:@""""] ||
+            [tempStr2 containsString:@","]  ||
+            [tempStr2 containsString:@"//"] ||
+            [tempStr2 containsString:@"("]  ||
+            [tempStr2 containsString:@"*"]  ||
+            [tempStr2 containsString:@"_"]  ||
+            [tempStr2 containsString:@">"]  ||
+            [tempStr2 containsString:@"<"]  ||
+            [tempStr2 containsString:@"\\"] ||
+            [tempStr2 containsString:@"}"]  ||
+            [tempStr2 containsString:@"{"]  ||
+            [tempStr2 containsString:@":"]  ||
+            [tempStr2 containsString:@"="]  ||
+            [tempStr2 containsString:@"?"])) {
 
             NSString* tempStr = str;
 
@@ -58,6 +69,22 @@
             tempStr = [tempStr stringByReplacingOccurrencesOfString:@")" withString:@""];
             tempStr = [tempStr stringByReplacingOccurrencesOfString:@"*" withString:@""];
             tempStr = [tempStr stringByReplacingOccurrencesOfString:@"_" withString:@""];
+            tempStr = [tempStr stringByReplacingOccurrencesOfString:@">" withString:@""];
+            tempStr = [tempStr stringByReplacingOccurrencesOfString:@"<" withString:@""];
+            tempStr = [tempStr stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+            tempStr = [tempStr stringByReplacingOccurrencesOfString:@"{" withString:@""];
+            tempStr = [tempStr stringByReplacingOccurrencesOfString:@"}" withString:@""];
+            tempStr = [tempStr stringByReplacingOccurrencesOfString:@":" withString:@""];
+            tempStr = [tempStr stringByReplacingOccurrencesOfString:@"=" withString:@""];
+            tempStr = [tempStr stringByReplacingOccurrencesOfString:@"?" withString:@""];
+
+
+
+
+
+
+
+
 
 
         tempStr2 = tempStr;
@@ -150,7 +177,7 @@
 
 
 
-    //[self sortArray:arrayWithWordData];
+    [self sortArray:arrayWithWordData];
 
 
 
@@ -179,6 +206,10 @@
 
         NSLog(@"%@ : %ld",word.word, word.repeatsCount);
     }
+    
+    //self.analyzedWords = [NSMutableArray array];
+    
+    self.analyzedWords = arrayWithWordData;
 
     
 }
@@ -191,9 +222,9 @@
 
             WordData* biggerObj = [arrayForSort objectAtIndex:i + 1];
             WordData* lessObj = [arrayForSort objectAtIndex:i];
-            NSLog(@"before replace obj i : %@ obji +1 : %@", lessObj.word, biggerObj.word);
+            //NSLog(@"before replace obj i : %@ obji +1 : %@", lessObj.word, biggerObj.word);
             [arrayForSort replaceObjectAtIndex:i withObject:[arrayForSort objectAtIndex:i + 1]];
-            NSLog(@"after replace obj i : %@ obji + 1 : %@", [[arrayForSort objectAtIndex:0] word],[[arrayForSort objectAtIndex:i + 1]word] );
+            //NSLog(@"after replace obj i : %@ obji + 1 : %@", [[arrayForSort objectAtIndex:0] word],[[arrayForSort objectAtIndex:i + 1]word] );
             [self sortArray:arrayForSort];
         } else continue;
 

@@ -11,6 +11,8 @@
 @interface TextAnalyzer : NSObject
 
 @property (strong, nonatomic) NSString* textForImport;
-@property (strong, nonatomic) NSArray* analyzedWords;
+@property (strong, nonatomic) NSMutableArray* analyzedWords;
+
+- (void)singleMethod;
 
 @end

@@ -11,7 +11,7 @@ import UIKit//test
 
 class WordsViewControllerTableViewController: UITableViewController {
     
-    public var words: [Word] = []
+  //  public var words: [Word] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +40,8 @@ class WordsViewControllerTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        var numberOfRows = words.count
-        return numberOfRows
+       // var numberOfRows = words.count
+        return 0
     }
 
     /*

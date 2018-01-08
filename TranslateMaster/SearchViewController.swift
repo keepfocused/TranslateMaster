@@ -26,6 +26,8 @@ class SearchViewController: UIViewController {
     
     private var messageId:String?
     
+    var importText:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -105,6 +107,8 @@ class SearchViewController: UIViewController {
             self.contentTextView.text = decodedText
             
             self.analyzeButtonOutlet.isHidden = false
+            
+            importText = decodedText
         }
         
 
@@ -173,6 +177,17 @@ class SearchViewController: UIViewController {
     
     @IBAction func analyzeButtonAction(_ sender: UIButton) {
         print("Analyze button pressed")
+        
+        let textAnalyz = TextAnalyzer()
+        
+        
+        
+        textAnalyz.textForImport = importText
+        
+        textAnalyz.singleMethod()
+        
+        //print(" Analyzed text = \(textAnalyz.analyzedWords)")
+        
     }
 
 
