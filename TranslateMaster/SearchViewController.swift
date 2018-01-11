@@ -186,6 +186,14 @@ class SearchViewController: UIViewController {
         
         textAnalyz.singleMethod()
         
+        
+        if (textAnalyz != nil)
+        {
+            print (textAnalyz.analyzedWords)
+        }
+        
+
+        
         //print(" Analyzed text = \(textAnalyz.analyzedWords)")
         
     }
