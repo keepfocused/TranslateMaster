@@ -186,11 +186,13 @@ class SearchViewController: UIViewController {
         
         textAnalyz.singleMethod()
         
-        
+        8
         if (textAnalyz != nil)
         {
             print (textAnalyz.analyzedWords)
         }
+        
+        var tempArray = textAnalyz.analyzedWords
         
 
         
