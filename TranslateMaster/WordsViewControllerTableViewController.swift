@@ -6,13 +6,15 @@
 //  Copyright © 2017 Danil. All rights reserved.
 //
 
-import UIKit//test
+import UIKit
 
 
 class WordsViewControllerTableViewController: UITableViewController {
     
   //  public var words: [Word] = []
 
+    // MARK: - lifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

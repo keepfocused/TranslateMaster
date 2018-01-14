@@ -28,6 +28,8 @@ class SearchViewController: UIViewController {
     
     var importText:String = ""
     
+    //MARK: - lifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -184,9 +186,9 @@ class SearchViewController: UIViewController {
         
         textAnalyz.textForImport = importText
         
-        textAnalyz.singleMethod()
+        textAnalyz.performTextAnalyze()
         
-        8
+        
         if (textAnalyz != nil)
         {
             print (textAnalyz.analyzedWords)

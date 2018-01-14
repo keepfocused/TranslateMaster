@@ -18,14 +18,10 @@
 
 @implementation TextAnalyzer
 
-- (void)singleMethod {
+- (void)performTextAnalyze {
 
 
     self.sortedArray = [NSMutableArray array];
-
-
-
-
     
     
     NSString* content = self.textForImport;
@@ -77,12 +73,6 @@
             tempStr = [tempStr stringByReplacingOccurrencesOfString:@":" withString:@""];
             tempStr = [tempStr stringByReplacingOccurrencesOfString:@"=" withString:@""];
             tempStr = [tempStr stringByReplacingOccurrencesOfString:@"?" withString:@""];
-
-
-
-
-
-
 
 
 

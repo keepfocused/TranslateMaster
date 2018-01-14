@@ -13,6 +13,6 @@
 @property (strong, nonatomic) NSString* textForImport;
 @property (strong, nonatomic) NSMutableArray* analyzedWords;
 
-- (void)singleMethod;
+- (void)performTextAnalyze;
 
 @end

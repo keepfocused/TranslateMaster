@@ -23,6 +23,9 @@ class GoogleAuthViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
     let output = UITextView()
     var authResponseObject:GIDGoogleUser?
     
+    //MARK: - lifeCycle
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
