@@ -20,8 +20,8 @@
 		839B585B20017B96004C615E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839B585A20017B96004C615E /* CoreData.framework */; };
 		839B585F200190EC004C615E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 839B585D200190EC004C615E /* Model.xcdatamodeld */; };
 		83C7C8671FE985B000E65168 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C7C8661FE985B000E65168 /* SearchViewController.swift */; };
+		83E9C7CC200E94BD00340E6A /* AddNewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9C7CB200E94BD00340E6A /* AddNewCardViewController.swift */; };
 		83F73E171FCDFE8500B1BA10 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F73E161FCDFE8500B1BA10 /* Word.swift */; };
-		83F73E191FCDFF1100B1BA10 /* WordsViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F73E181FCDFF1100B1BA10 /* WordsViewControllerTableViewController.swift */; };
 		9EA18E0A4AA42C8CD7BADCC8 /* Pods_TranslateMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA17B34A5ED5195F37021F /* Pods_TranslateMaster.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +44,8 @@
 		839B585A20017B96004C615E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		839B585E200190EC004C615E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		83C7C8661FE985B000E65168 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		83E9C7CB200E94BD00340E6A /* AddNewCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewCardViewController.swift; sourceTree = "<group>"; };
 		83F73E161FCDFE8500B1BA10 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
-		83F73E181FCDFF1100B1BA10 /* WordsViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		C1DA1F48073C39B366A2BAD0 /* Pods-TranslateMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranslateMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranslateMaster/Pods-TranslateMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		D0BA17B34A5ED5195F37021F /* Pods_TranslateMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TranslateMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51D388F79882AA6ACAFFA1B /* Pods-TranslateMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranslateMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-TranslateMaster/Pods-TranslateMaster.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,12 +125,9 @@
 		83725DB91FBE124700174518 /* TranslateMaster */ = {
 			isa = PBXGroup;
 			children = (
-				83725DBC1FBE124700174518 /* GoogleAuthViewController.swift */,
-				836EB9E21FC09BEB00109E37 /* SortLogic.swift */,
+				83E9C7CA200E935E00340E6A /* Controllers */,
 				83725DC01FBE124700174518 /* Main.storyboard */,
-				83C7C8661FE985B000E65168 /* SearchViewController.swift */,
 				83F73E161FCDFE8500B1BA10 /* Word.swift */,
-				83F73E181FCDFF1100B1BA10 /* WordsViewControllerTableViewController.swift */,
 			);
 			path = TranslateMaster;
 			sourceTree = "<group>";
@@ -142,6 +139,17 @@
 			);
 			name = CoreData;
 			path = TranslateMaster;
+			sourceTree = "<group>";
+		};
+		83E9C7CA200E935E00340E6A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				83725DBC1FBE124700174518 /* GoogleAuthViewController.swift */,
+				83E9C7CB200E94BD00340E6A /* AddNewCardViewController.swift */,
+				836EB9E21FC09BEB00109E37 /* SortLogic.swift */,
+				83C7C8661FE985B000E65168 /* SearchViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		F373780C61B314D3FC464002 /* Pods */ = {
@@ -299,11 +307,11 @@
 				836EB9EC1FC0B93D00109E37 /* WordData.m in Sources */,
 				83C7C8671FE985B000E65168 /* SearchViewController.swift in Sources */,
 				83F73E171FCDFE8500B1BA10 /* Word.swift in Sources */,
-				83F73E191FCDFF1100B1BA10 /* WordsViewControllerTableViewController.swift in Sources */,
 				839B585F200190EC004C615E /* Model.xcdatamodeld in Sources */,
 				83725DBB1FBE124700174518 /* AppDelegate.swift in Sources */,
 				83725DBD1FBE124700174518 /* GoogleAuthViewController.swift in Sources */,
 				836EB9EB1FC0B93D00109E37 /* TextAnalyzer.m in Sources */,
+				83E9C7CC200E94BD00340E6A /* AddNewCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
