@@ -151,7 +151,7 @@
         <!--Add new card-->
         <scene sceneID="oPs-Nr-Z1z">
             <objects>
-                <viewController title="Add new card" id="8xt-Jh-PqV" sceneMemberID="viewController">
+                <viewController title="Add new card" id="8xt-Jh-PqV" customClass="AddNewCardViewController" customModule="TranslateMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DJA-bP-uhu"/>
                         <viewControllerLayoutGuide type="bottom" id="I4z-KE-Vwp"/>
@@ -205,6 +205,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="hGZ-Rt-t2X"/>
+                    <connections>
+                        <outlet property="addNewCardViewOutlet" destination="4VH-cY-ofI" id="0Ks-ze-ICa"/>
+                        <outlet property="sda" destination="4VH-cY-ofI" id="8JZ-N7-l0b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Enu-7o-bCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

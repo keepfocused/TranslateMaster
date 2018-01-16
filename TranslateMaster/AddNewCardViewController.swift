@@ -8,10 +8,12 @@
 
 import UIKit
 
-class AddNewWordViewController: UIViewController {
+class AddNewCardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
 
         // Do any additional setup after loading the view.
     }
@@ -20,6 +22,41 @@ class AddNewWordViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBOutlet weak var addNewCardViewOutlet: UIView!
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        
+        
+        UIView.animate(withDuration: 0.7, delay: 1.0, options: .curveEaseOut, animations: {
+            // var basketTopFrame = self.basketTop.frame
+            //    basketTopFrame.origin.y -= basketTopFrame.size.height
+            
+            var addNewCardFrame = self.addNewCardViewOutlet.frame
+            addNewCardFrame.origin.y += addNewCardFrame.size.height * 3
+            self.addNewCardViewOutlet.frame = addNewCardFrame
+            
+            
+            //
+            //    var basketBottomFrame = self.basketBottom.frame
+            //    basketBottomFrame.origin.y += basketBottomFrame.size.height
+            //
+            //    self.basketTop.frame = basketTopFrame
+            //    self.basketBottom.frame = basketBottomFrame
+        }, completion: { finished in
+            print("Basket doors opened!")
+        })
+    }
+    
+
+
+
+    
+ 
+    
     
 
     /*
