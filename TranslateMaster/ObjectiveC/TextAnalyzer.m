@@ -14,6 +14,9 @@
 
 @property (strong, nonatomic) NSMutableArray* sortedArray;
 
+@property (strong, nonatomic) NSMutableArray* tempArrayForSort;
+
+
 @end
 
 @implementation TextAnalyzer
@@ -199,26 +202,60 @@
     
     //self.analyzedWords = [NSMutableArray array];
     
+    
+    
     self.analyzedWords = arrayWithWordData;
+    
+//    NSLog(@"call sort method");
+//    
+//    self.tempArrayForSort = [NSMutableArray array];
+//    
+//    [self sortArray:sortedArray];
+//    
+//    
+//    NSLog(@"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+//    
+//    NSLog(@"sorted array = \n");
+//    
+//    
+//    for (WordData* word in arrayWithWordData) {
+//        
+//        NSLog(@"%@ : %ld", word.word, word.repeatsCount);
+//    }
+//    
+//    for (WordData* word in self.tempArrayForSort) {
+//        
+//        NSLog(@"%@ : %ld", word.word, word.repeatsCount);
+//    }
+    
+    
+    
 
     
 }
 
-- (void) sortArray:(NSMutableArray*)arrayForSort
+- (NSMutableArray*) sortArray:(NSMutableArray*)arrayForSort
 {
+    
+    NSMutableArray* tempArray = [NSMutableArray array];
+    
+    tempArray = arrayForSort;
 
-    for (int i = 0; i < [arrayForSort count] - 1 ; i++) {
-        if ([[arrayForSort objectAtIndex:i] repeatsCount] < [[arrayForSort objectAtIndex:i + 1] repeatsCount]) {
+    for (int i = 0; i < [tempArray count] - 1 ; i++) {
+        if ([[tempArray objectAtIndex:i] repeatsCount] < [[tempArray objectAtIndex:i + 1] repeatsCount]) {
 
-            WordData* biggerObj = [arrayForSort objectAtIndex:i + 1];
-            WordData* lessObj = [arrayForSort objectAtIndex:i];
+            WordData* biggerObj = [tempArray objectAtIndex:i + 1];
+            WordData* lessObj = [tempArray objectAtIndex:i];
             //NSLog(@"before replace obj i : %@ obji +1 : %@", lessObj.word, biggerObj.word);
-            [arrayForSort replaceObjectAtIndex:i withObject:[arrayForSort objectAtIndex:i + 1]];
+            [tempArray replaceObjectAtIndex:i withObject:[tempArray objectAtIndex:i + 1]];
             //NSLog(@"after replace obj i : %@ obji + 1 : %@", [[arrayForSort objectAtIndex:0] word],[[arrayForSort objectAtIndex:i + 1]word] );
-            [self sortArray:arrayForSort];
+            self.tempArrayForSort = tempArray;
+            [self sortArray:self.tempArrayForSort];
         } else continue;
 
     }
+    
+    return tempArray;
 
 }
 

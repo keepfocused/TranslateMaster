@@ -25,6 +25,18 @@ class AddNewCardViewController: UIViewController {
     
     
     @IBOutlet weak var addNewCardViewOutlet: UIView!
+
+    @IBOutlet weak var saveButtonOutlet: UIButton!
+    
+    
+    
+    @IBOutlet weak var cancleButtonOutlet: UIButton!
+    
+    @IBOutlet weak var russianInput: UITextField!
+    
+    @IBOutlet weak var englishInput: UITextField!
+    
+    
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,7 +48,7 @@ class AddNewCardViewController: UIViewController {
             //    basketTopFrame.origin.y -= basketTopFrame.size.height
             
             var addNewCardFrame = self.addNewCardViewOutlet.frame
-            addNewCardFrame.origin.y += addNewCardFrame.size.height * 3
+            addNewCardFrame.size.height += addNewCardFrame.size.height * 1.5
             self.addNewCardViewOutlet.frame = addNewCardFrame
             
             

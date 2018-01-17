@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		834F9280200EA18D002A4335 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F927D200EA18D002A4335 /* RootViewController.swift */; };
+		834F9281200EA18D002A4335 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F927E200EA18D002A4335 /* DataViewController.swift */; };
+		834F9282200EA18D002A4335 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F927F200EA18D002A4335 /* ModelController.swift */; };
 		836EB9E31FC09BEB00109E37 /* SortLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836EB9E21FC09BEB00109E37 /* SortLogic.swift */; };
 		836EB9EB1FC0B93D00109E37 /* TextAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 836EB9E81FC0B93D00109E37 /* TextAnalyzer.m */; };
 		836EB9EC1FC0B93D00109E37 /* WordData.m in Sources */ = {isa = PBXBuildFile; fileRef = 836EB9EA1FC0B93D00109E37 /* WordData.m */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		834F927D200EA18D002A4335 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		834F927E200EA18D002A4335 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		834F927F200EA18D002A4335 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		836EB9E21FC09BEB00109E37 /* SortLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortLogic.swift; sourceTree = "<group>"; };
 		836EB9E61FC0B93D00109E37 /* TranslateMaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TranslateMaster-Bridging-Header.h"; sourceTree = "<group>"; };
 		836EB9E71FC0B93D00109E37 /* TextAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextAnalyzer.h; path = ObjectiveC/TextAnalyzer.h; sourceTree = "<group>"; };
@@ -148,6 +154,9 @@
 				83E9C7CB200E94BD00340E6A /* AddNewCardViewController.swift */,
 				836EB9E21FC09BEB00109E37 /* SortLogic.swift */,
 				83C7C8661FE985B000E65168 /* SearchViewController.swift */,
+				834F927D200EA18D002A4335 /* RootViewController.swift */,
+				834F927E200EA18D002A4335 /* DataViewController.swift */,
+				834F927F200EA18D002A4335 /* ModelController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -303,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834F9280200EA18D002A4335 /* RootViewController.swift in Sources */,
 				836EB9E31FC09BEB00109E37 /* SortLogic.swift in Sources */,
 				836EB9EC1FC0B93D00109E37 /* WordData.m in Sources */,
 				83C7C8671FE985B000E65168 /* SearchViewController.swift in Sources */,
@@ -311,7 +321,9 @@
 				83725DBB1FBE124700174518 /* AppDelegate.swift in Sources */,
 				83725DBD1FBE124700174518 /* GoogleAuthViewController.swift in Sources */,
 				836EB9EB1FC0B93D00109E37 /* TextAnalyzer.m in Sources */,
+				834F9282200EA18D002A4335 /* ModelController.swift in Sources */,
 				83E9C7CC200E94BD00340E6A /* AddNewCardViewController.swift in Sources */,
+				834F9281200EA18D002A4335 /* DataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
